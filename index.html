@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tartan Realty & Investments Limited</title>
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.svg">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="msapplication-TileColor" content="#8B4513">
+    
+    <!-- Import Outfit Fonts -->
+    <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Book Container -->
+    <div class="book-container">
+        <!-- Book Cover -->
+        <div class="book-cover">
+            <div class="cover-content">
+                <div class="logo-large">
+                    <img src="logo-reference-based.svg" alt="Tartan Realty Logo">
+                    <h1>TARTAN REALTY</h1>
+                    <h2>& INVESTMENTS LIMITED</h2>
+                    <p>Realty Remodeling & Sales</p>
+                </div>
+                <button class="open-book-btn" onclick="openBook()">Open Book</button>
+            </div>
+        </div>
+
+        <!-- Book Pages -->
+        <div class="book" id="book">
+            <!-- Modern Floating Navigation -->
+            <div class="page-tabs" id="navTabs">
+                <div class="nav-toggle" id="navToggle">
+                    <span class="nav-icon">☰</span>
+                    <span class="nav-close">✕</span>
+                </div>
+                <div class="nav-items" id="navItems">
+                    <div class="tab active" data-page="0">
+                        <span class="tab-icon">🏠</span>
+                        <span class="tab-text">HOME</span>
+                    </div>
+                    <div class="tab" data-page="1">
+                        <span class="tab-icon">⭐</span>
+                        <span class="tab-text">WHY US?</span>
+                    </div>
+                    <div class="tab" data-page="2">
+                        <span class="tab-icon">🏢</span>
+                        <span class="tab-text">WHAT WE DO?</span>
+                    </div>
+                    <div class="tab" data-page="3">
+                        <span class="tab-icon">📞</span>
+                        <span class="tab-text">CONTACT</span>
+                    </div>
+                    <div class="tab" data-page="4">
+                        <span class="tab-icon">ℹ️</span>
+                        <span class="tab-text">ABOUT</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Pages -->
+            <div class="book-pages" id="bookPages">
+
+                <!-- PAGE 1: HOME -->
+                <div class="page" data-page="0">
+                    <div class="page-left">
+                        <div class="page-content">
+                            <h1>Your Dream Property Awaits</h1>
+                            <div class="hero-image">
+                                <img src="Images/caroline-badran-AH1qU8YkyaQ-unsplash.jpg" alt="Beautiful property">
+                            </div>
+                            <p class="lead-text">Tartan Realty & Investments Limited - Making your property dreams a reality</p>
+                        </div>
+                    </div>
+                    <div class="page-right">
+                        <div class="page-content">
+                            <h2>Welcome to Tartan Realty</h2>
+                            <div class="intro-cards">
+                                <div class="intro-card">
+                                    <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Professional service">
+                                    <h3>Professional Excellence</h3>
+                                    <p>We know how difficult it is getting the right apartment, house, or office in the right location within budget…but that is why we are in business.</p>
+                                </div>
+                                <div class="intro-card">
+                                    <img src="Images/aleksey-cherenkevich-c9BaR5Qdrmc-unsplash.jpg" alt="Market expertise">
+                                    <h3>Market Expertise</h3>
+                                    <p>The UK property market is increasingly dynamic with increased housing stock and stable interest rates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 2: WHY US -->
+                <div class="page" data-page="1">
+                    <div class="page-left">
+                        <div class="page-content">
+                            <h1>Why Choose Tartan Realty?</h1>
+                            <div class="feature-showcase">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🏠</div>
+                                    <h3>Comprehensive Services</h3>
+                                    <p>From students to high-net-worth individuals and organizations, we serve all cross sections of customers.</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">💎</div>
+                                    <h3>Bespoken Solutions</h3>
+                                    <p>Our company specializes in providing bespoken remodeling of properties, ensuring each solution is uniquely crafted.</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📈</div>
+                                    <h3>Strategic Investment</h3>
+                                    <p>We provide a professional platform for real estate investment, including market analysis and portfolio diversification.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-right">
+                        <div class="page-content">
+                            <h2>Our Expertise</h2>
+                            <div class="expertise-showcase">
+                                <div class="expertise-card">
+                                    <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Market Knowledge">
+                                    <h3>Deep Market Knowledge</h3>
+                                    <p>The UK property market is increasingly dynamic with increased housing stock and stable interest rates.</p>
+                                </div>
+                                <div class="expertise-card">
+                                    <img src="Images/aleksey-cherenkevich-c9BaR5Qdrmc-unsplash.jpg" alt="Professional Service">
+                                    <h3>Professional Excellence</h3>
+                                    <p>We make your dreams a reality by finding the right property in the right location within budget.</p>
+                                </div>
+                                <div class="expertise-card">
+                                    <img src="Images/annie-spratt-f311tyAZU_4-unsplash.jpg" alt="Transparency">
+                                    <h3>Transparency & Trust</h3>
+                                    <p>We operate with complete transparency and accessibility in all real estate transactions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 3: WHAT WE DO -->
+                <div class="page" data-page="2">
+                    <div class="page-left">
+                        <div class="page-content">
+                            <h1>What We Do</h1>
+                            <div class="service-compact">
+                                <div class="service-header">
+                                    <img src="Images/clay-banks-mhDeeOvBs9o-unsplash.jpg" alt="Property Sales" class="service-icon">
+                                    <div class="service-title">
+                                        <h3>Property Sales & Acquisition</h3>
+                                        <p class="service-subtitle">Professional real estate transactions</p>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <p>We primarily engage in the buying and selling of real estate properties, providing professional guidance throughout the entire process.</p>
+                                    <ul class="service-list">
+                                        <li>Residential property sales</li>
+                                        <li>Commercial property acquisition</li>
+                                        <li>Investment property sourcing</li>
+                                        <li>Market valuation services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-right">
+                        <div class="page-content">
+                            <h2>Our Services</h2>
+                            <div class="service-compact">
+                                <div class="service-header">
+                                    <img src="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg" alt="Property Remodeling" class="service-icon">
+                                    <div class="service-title">
+                                        <h3>Bespoken Property Remodeling</h3>
+                                        <p class="service-subtitle">Custom property transformations</p>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <p>We specialize in bespoken remodeling of properties to meet your unique needs and preferences.</p>
+                                    <ul class="service-list">
+                                        <li>Custom home renovations</li>
+                                        <li>Commercial space redesign</li>
+                                        <li>Interior design consultation</li>
+                                        <li>Project management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="process-section">
+                                <h4>🔄 Our Process:</h4>
+                                <div class="process-steps">
+                                    <span class="step">1. Initial Consultation</span>
+                                    <span class="step">2. Market Analysis</span>
+                                    <span class="step">3. Property Selection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 4: CONTACT -->
+                <div class="page" data-page="3">
+                    <div class="page-left">
+                        <div class="page-content">
+                            <h1>Book Your Appointment</h1>
+                            <form class="contact-form-compact" id="appointmentForm" action="https://formspree.io/f/xwprbdwe" method="POST">
+                                <div class="form-row-group">
+                                    <div class="form-row">
+                                        <label for="fullName">Full Name *</label>
+                                        <input type="text" id="fullName" name="fullName" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-row-group">
+                                    <div class="form-row">
+                                        <label for="phone">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="serviceType">Service Interest *</label>
+                                        <select id="serviceType" name="serviceType" required>
+                                            <option value="">Select a service...</option>
+                                            <option value="property-sales">Property Sales</option>
+                                            <option value="property-remodeling">Property Remodeling</option>
+                                            <option value="investment-services">Investment Services</option>
+                                            <option value="property-rentals">Property Rentals</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row full-width">
+                                    <label for="message">Additional Details</label>
+                                    <textarea id="message" name="message" rows="2" placeholder="Tell us about your requirements..."></textarea>
+                                </div>
+                                <!-- Hidden fields for form organization -->
+                                <input type="hidden" name="_subject" value="New Appointment Request - Tartan Realty">
+                                <input type="hidden" name="_next" value="#thank-you">
+                                <button type="submit" class="book-submit-btn">📅 Book Appointment</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="page-right">
+                        <div class="page-content">
+                            <h2>Get in Touch</h2>
+                            <div class="contact-info-grid">
+                                <div class="contact-card">
+                                    <div class="contact-icon">📞</div>
+                                    <div class="contact-text">
+                                        <h4>Phone</h4>
+                                        <p>+44 (0) 20 7XXX XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">📧</div>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <p>info@tartanrealty.co.uk</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">🕒</div>
+                                    <div class="contact-text">
+                                        <h4>Office Hours</h4>
+                                        <p>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">⚡</div>
+                                    <div class="contact-text">
+                                        <h4>Response Time</h4>
+                                        <p>Within 24 hours</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-image-small">
+                                <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Professional consultation">
+                                <p class="image-caption">Professional consultation available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 5: ABOUT -->
+                <div class="page" data-page="4">
+                    <div class="page-left">
+                        <div class="page-content">
+                            <h1>About Tartan Realty</h1>
+                            <div class="about-summary">
+                                <div class="about-intro">
+                                    <img src="Images/caroline-badran-AH1qU8YkyaQ-unsplash.jpg" alt="Tartan Realty" class="about-thumbnail">
+                                    <div class="about-text">
+                                        <p class="lead-text">Tartan Realty & Investments Limited is a company engaged in the provision of bespoken remodeling of properties, renting and sales to all cross sections of customers.</p>
+                                    </div>
+                                </div>
+                                <div class="about-details">
+                                    <p>We primarily engage in the buying and selling of real estate properties and providing a professional and strategic platform for real estate investment.</p>
+                                    <blockquote class="company-quote">
+                                        <p><em>"We know how difficult it is getting the right apartment, house, or office in the right location within budget…but that is why we are in business – to make your dreams a reality."</em></p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-right">
+                        <div class="page-content">
+                            <h2>Our Foundation</h2>
+                            <div class="company-pillars">
+                                <div class="pillar">
+                                    <h3>🎯 Our Mission</h3>
+                                    <p>To make property dreams a reality by providing exceptional, transparent, and accessible real estate services to all cross sections of customers.</p>
+                                </div>
+                                <div class="pillar">
+                                    <h3>🌟 Our Vision</h3>
+                                    <p>To be the leading real estate company in the UK, recognized for our bespoken solutions and market expertise.</p>
+                                </div>
+                                <div class="pillar">
+                                    <h3>💎 Our Values</h3>
+                                    <ul>
+                                        <li>Transparency in all transactions</li>
+                                        <li>Customer-centric approach</li>
+                                        <li>Professional excellence</li>
+                                        <li>Market innovation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 6: THANK YOU -->
+                <div class="page" data-page="5" id="thank-you">
+                    <div class="page-left">
+                        <div class="page-content">
+                            <h1>Thank You!</h1>
+                            <div class="thank-you-content">
+                                <div class="success-icon">
+                                    <div class="checkmark">✓</div>
+                                </div>
+                                <div class="thank-you-message">
+                                    <h2>Your appointment request has been sent successfully!</h2>
+                                    <p class="lead-text">We have received your appointment request and will contact you within 24 hours to confirm your booking.</p>
+                                    <div class="next-steps">
+                                        <h3>What happens next?</h3>
+                                        <ul>
+                                            <li>📧 You'll receive an email confirmation shortly</li>
+                                            <li>📞 Our team will call you within 24 hours</li>
+                                            <li>📅 We'll schedule your appointment at your convenience</li>
+                                            <li>🏠 Get ready to find your perfect property!</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-right">
+                        <div class="page-content">
+                            <h2>Contact Information</h2>
+                            <div class="contact-reminder">
+                                <div class="contact-card">
+                                    <div class="contact-icon">📞</div>
+                                    <div class="contact-text">
+                                        <h4>Phone</h4>
+                                        <p>+44 (0) 20 7XXX XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">📧</div>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <p>info@tartanrealty.co.uk</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-icon">⚡</div>
+                                    <div class="contact-text">
+                                        <h4>Response Time</h4>
+                                        <p>Within 24 hours</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="go-back-btn" onclick="showPage(3)">📞 Back to Contact</button>
+                                <button class="home-btn" onclick="showPage(0)">🏠 Go to Home</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 6;
+        let bookOpened = false;
+
+        function openBook() {
+            const cover = document.querySelector('.book-cover');
+            const book = document.querySelector('.book');
+            
+            cover.style.transform = 'rotateY(-180deg)';
+            setTimeout(() => {
+                cover.style.display = 'none';
+                book.style.display = 'block';
+                book.classList.add('opened');
+                bookOpened = true;
+                showPage(0);
+            }, 800);
+        }
+
+        function showPage(pageIndex) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            const tabs = document.querySelectorAll('.tab');
+            
+            pages.forEach((page, index) => {
+                if (index === pageIndex) {
+                    page.classList.add('active');
+                    page.style.transform = 'rotateY(0deg)';
+                    page.style.zIndex = 10;
+                } else if (index < pageIndex) {
+                    page.classList.remove('active');
+                    page.style.transform = 'rotateY(-180deg)';
+                    page.style.zIndex = index;
+                } else {
+                    page.classList.remove('active');
+                    page.style.transform = 'rotateY(0deg)';
+                    page.style.zIndex = totalPages - index;
+                }
+            });
+
+            // Update active tab
+            tabs.forEach((tab, index) => {
+                if (index === pageIndex) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            currentPage = pageIndex;
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                showPage(currentPage + 1);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                showPage(currentPage - 1);
+            }
+        }
+
+        // Initialize book
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add tab click listeners
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    if (bookOpened) {
+                        showPage(index);
+                    }
+                });
+            });
+
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                // Don't trigger navigation if user is typing in form fields
+                const isFormElement = e.target.tagName === 'INPUT' || 
+                                    e.target.tagName === 'TEXTAREA' || 
+                                    e.target.tagName === 'SELECT' ||
+                                    e.target.isContentEditable;
+                
+                if (bookOpened && !isFormElement) {
+                    if (e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault(); // Prevent default spacebar behavior
+                        nextPage();
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        prevPage();
+                    }
+                }
+            });
+
+            // Form submission - Handle success state locally
+            const form = document.getElementById('appointmentForm');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    // Show loading state
+                    const submitBtn = form.querySelector('.book-submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = '📤 Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // After form submits successfully, show thank you page and reset form
+                    setTimeout(() => {
+                        // Reset the form
+                        form.reset();
+                        
+                        // Show thank you page
+                        showPage(5);
+                        
+                        // Reset button state
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500); // Give time for Formspree to process
+                });
+            }
+
+            // Check URL hash on page load for direct thank-you page access
+            function checkUrlHash() {
+                if (window.location.hash === '#thank-you') {
+                    if (bookOpened) {
+                        showPage(5);
+                    }
+                }
+            }
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', checkUrlHash);
+            
+            // Check on initial load
+            setTimeout(checkUrlHash, 1000);
+
+            // Add touch/swipe support for mobile
+            let startX = 0;
+            let endX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            document.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (bookOpened) {
+                    const swipeThreshold = 50;
+                    const diff = startX - endX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            // Swipe left - next page
+                            nextPage();
+                        } else {
+                            // Swipe right - previous page
+                            prevPage();
+                        }
+                    }
+                }
+            }
+
+            // Enhanced mobile functionality
+            function enhanceMobileExperience() {
+                // Add haptic feedback for supported devices
+                if ('vibrate' in navigator) {
+                    document.querySelectorAll('.tab').forEach(tab => {
+                        tab.addEventListener('touchstart', () => {
+                            navigator.vibrate(10); // Subtle haptic feedback
+                        });
+                    });
+                }
+
+                // Improve scrolling for mobile
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(page => {
+                    page.style.scrollBehavior = 'smooth';
+                });
+
+                // Handle orientation changes
+                window.addEventListener('orientationchange', () => {
+                    setTimeout(() => {
+                        // Recalculate dimensions after orientation change
+                        const book = document.getElementById('book');
+                        if (book) {
+                            book.style.transform = 'perspective(1200px) rotateY(0deg)';
+                        }
+                    }, 100);
+                });
+
+                // Add loading states for images
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.complete) {
+                        img.style.opacity = '0.5';
+                        img.addEventListener('load', () => {
+                            img.style.opacity = '1';
+                            img.style.transition = 'opacity 0.3s ease';
+                        });
+                    }
+                });
+
+                // Optimize for iOS Safari
+                if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
+                    document.body.style.webkitUserSelect = 'none';
+                    document.body.style.webkitTouchCallout = 'none';
+                }
+            }
+
+            // Initialize mobile enhancements
+            enhanceMobileExperience();
+
+            // Modern expandable navigation functionality
+            function initModernNavigation() {
+                const navToggle = document.getElementById('navToggle');
+                const navTabs = document.getElementById('navTabs');
+                const navItems = document.getElementById('navItems');
+                let isExpanded = false;
+
+                if (navToggle) {
+                    navToggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        isExpanded = !isExpanded;
+                        
+                        if (isExpanded) {
+                            navTabs.classList.add('expanded');
+                            // Auto-collapse after 10 seconds
+                            setTimeout(() => {
+                                if (isExpanded) {
+                                    collapseNav();
+                                }
+                            }, 10000);
+                        } else {
+                            collapseNav();
+                        }
+                        
+                        // Haptic feedback
+                        if ('vibrate' in navigator) {
+                            navigator.vibrate(15);
+                        }
+                    });
+                }
+
+                // Close navigation when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (isExpanded && !navTabs.contains(e.target)) {
+                        collapseNav();
+                    }
+                });
+
+                // Close navigation when tab is clicked
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        setTimeout(() => {
+                            collapseNav();
+                        }, 500); // Small delay for smooth transition
+                    });
+                });
+
+                function collapseNav() {
+                    isExpanded = false;
+                    navTabs.classList.remove('expanded');
+                }
+
+                // Auto-show navigation hint on page load
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        navToggle.style.animation = 'pulse 0.6s ease-in-out 3';
+                    }, 2000);
+                }
+            }
+
+            // Initialize modern navigation
+            initModernNavigation();
+
+            // Moving Arrow that follows mouse movement
+            const movingArrow = document.getElementById('customCursor');
+            let mouseX = 0, mouseY = 0;
+            let arrowX = 0, arrowY = 0;
+            let lastMouseX = 0, lastMouseY = 0;
+
+            // Enable moving arrow on all devices
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            // Show moving arrow on all devices
+            movingArrow.style.display = 'block';
+            
+            if (!isTouchDevice) {
+                // Desktop-specific features
+
+                // Track mouse movement and calculate direction
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    
+                    // Calculate movement direction for arrow rotation
+                    const deltaX = mouseX - lastMouseX;
+                    const deltaY = mouseY - lastMouseY;
+                    const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+                    
+                    // Update arrow rotation to point in movement direction
+                    if (Math.abs(deltaX) > 2 || Math.abs(deltaY) > 2) {
+                        movingArrow.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+                    }
+                    
+                    lastMouseX = mouseX;
+                    lastMouseY = mouseY;
+                    
+                    // Create occasional sparkle trail
+                    createSparkleTrail(mouseX, mouseY);
+                });
+
+                // Smooth arrow follow animation
+                function animateArrow() {
+                    const speed = 0.12; // Slightly slower for smoother follow
+                    arrowX += (mouseX - arrowX) * speed;
+                    arrowY += (mouseY - arrowY) * speed;
+                    
+                    movingArrow.style.left = arrowX + 'px';
+                    movingArrow.style.top = arrowY + 'px';
+                    
+                    requestAnimationFrame(animateArrow);
+                }
+                animateArrow();
+
+                // Create sparkle trail
+                function createSparkleTrail(x, y) {
+                    if (Math.random() < 0.2) { // 20% chance for sparkles
+                        const sparkle = document.createElement('div');
+                        sparkle.className = 'cursor-trail';
+                        sparkle.style.left = (x + (Math.random() - 0.5) * 10) + 'px';
+                        sparkle.style.top = (y + (Math.random() - 0.5) * 10) + 'px';
+                        document.body.appendChild(sparkle);
+                        
+                        // Animate sparkle
+                        setTimeout(() => {
+                            sparkle.style.opacity = '0';
+                            sparkle.style.transform = `scale(0)`;
+                        }, 100);
+                        
+                        // Remove sparkle
+                        setTimeout(() => {
+                            if (sparkle.parentNode) {
+                                sparkle.parentNode.removeChild(sparkle);
+                            }
+                        }, 500);
+                    }
+                }
+
+                // Hover effects for interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .tab, .logo-large, .service-item, input, textarea');
+                
+                interactiveElements.forEach(element => {
+                    element.addEventListener('mouseenter', () => {
+                        movingArrow.classList.add('hover');
+                    });
+                    
+                    element.addEventListener('mouseleave', () => {
+                        movingArrow.classList.remove('hover');
+                    });
+                });
+
+                // Click animation
+                document.addEventListener('mousedown', () => {
+                    movingArrow.classList.add('click');
+                });
+                
+                document.addEventListener('mouseup', () => {
+                    movingArrow.classList.remove('click');
+                });
+
+                // Hide arrow when leaving window
+                document.addEventListener('mouseleave', () => {
+                    movingArrow.style.opacity = '0';
+                });
+
+                document.addEventListener('mouseenter', () => {
+                    movingArrow.style.opacity = '1';
+                });
+            } else {
+                // Mobile-specific features
+                // Add touch event support for mobile
+                document.addEventListener('touchmove', (e) => {
+                    if (e.touches[0]) {
+                        mouseX = e.touches[0].clientX;
+                        mouseY = e.touches[0].clientY;
+                    }
+                });
+                
+                document.addEventListener('touchstart', () => {
+                    movingArrow.classList.add('click');
+                });
+                
+                document.addEventListener('touchend', () => {
+                    movingArrow.classList.remove('click');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

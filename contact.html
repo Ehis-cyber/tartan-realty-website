@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Tartan Realty & Investments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="logoPic.jpg" alt="Tartan Realty Logo">
+                <span>TARTAN REALTY</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="why-us.html">WHY US?</a></li>
+                <li><a href="what-we-do.html">WHAT WE DO?</a></li>
+                <li><a href="contact.html" class="active">BOOK APPOINTMENT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>Book Your Appointment</h1>
+            <p>Take the first step towards making your property dreams a reality</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Contact Form Section -->
+        <section class="content-section">
+            <h2>Schedule Your Consultation</h2>
+            <div class="contact-container">
+                <div class="contact-form-section">
+                    <form class="contact-form" id="appointmentForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceType">Service Interest *</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service...</option>
+                                <option value="property-sales">Property Sales & Acquisition</option>
+                                <option value="property-remodeling">Bespoken Property Remodeling</option>
+                                <option value="investment-services">Real Estate Investment Services</option>
+                                <option value="property-rentals">Property Rentals</option>
+                                <option value="market-analysis">Market Analysis</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyType">Property Type</label>
+                            <select id="propertyType" name="propertyType">
+                                <option value="">Select property type...</option>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="investment">Investment Property</option>
+                                <option value="student-housing">Student Housing</option>
+                                <option value="luxury">Luxury Property</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range...</option>
+                                <option value="under-200k">Under £200,000</option>
+                                <option value="200k-500k">£200,000 - £500,000</option>
+                                <option value="500k-1m">£500,000 - £1,000,000</option>
+                                <option value="1m-2m">£1,000,000 - £2,000,000</option>
+                                <option value="over-2m">Over £2,000,000</option>
+                                <option value="rental-budget">Rental Budget</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Appointment Date</label>
+                            <input type="date" id="preferredDate" name="preferredDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Time</label>
+                            <select id="preferredTime" name="preferredTime">
+                                <option value="">Select preferred time...</option>
+                                <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                                <option value="afternoon">Afternoon (12:00 PM - 5:00 PM)</option>
+                                <option value="evening">Evening (5:00 PM - 8:00 PM)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please tell us more about your requirements, location preferences, or any specific questions you have..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consent" required>
+                                <span class="checkmark"></span>
+                                I agree to be contacted by Tartan Realty & Investments regarding my inquiry *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Book My Appointment</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <p>+44 (0) 20 7XXX XXXX</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <p>info@tartanrealty.co.uk</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Office Hours:</strong>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                            Saturday: 10:00 AM - 4:00 PM<br>
+                            Sunday: By appointment only</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Response Time:</strong>
+                            <p>We typically respond to all inquiries within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-image">
+                        <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Professional consultation">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-section faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does a consultation take?</h3>
+                    <p>Initial consultations typically last 45-60 minutes, allowing us to thoroughly understand your needs and provide comprehensive guidance.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is the consultation free?</h3>
+                    <p>Yes, we offer complimentary initial consultations to discuss your property requirements and how we can assist you.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can we meet at the property location?</h3>
+                    <p>Absolutely! We can arrange on-site meetings for property viewings, assessments, or discussions about remodeling projects.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you work with first-time buyers?</h3>
+                    <p>Yes, we welcome clients at all experience levels. We provide extra guidance and support for first-time buyers throughout the process.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What areas do you cover?</h3>
+                    <p>We primarily serve the UK market with expertise in major cities and surrounding areas. Contact us to discuss your specific location.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How quickly can you arrange a meeting?</h3>
+                    <p>We can often arrange meetings within 24-48 hours, and we offer flexible scheduling including evenings and weekends when needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contact -->
+        <section class="emergency-contact">
+            <h2>Need Urgent Assistance?</h2>
+            <p>For urgent property matters or time-sensitive opportunities, contact us directly:</p>
+            <div class="emergency-info">
+                <div class="emergency-phone">
+                    <strong>Emergency Line:</strong> +44 (0) 7XXX XXX XXX
+                </div>
+                <div class="emergency-email">
+                    <strong>Priority Email:</strong> urgent@tartanrealty.co.uk
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tartan Realty & Investments Limited</h3>
+                <p>Realty Remodeling & Sales</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>Phone: +44 (0) 20 7XXX XXXX</li>
+                    <li>Email: info@tartanrealty.co.uk</li>
+                    <li>Emergency: +44 (0) 7XXX XXX XXX</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Book Appointment</h3>
+                <p>Schedule your consultation today</p>
+                <a href="#appointmentForm">Book Now</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.fullName || !data.email || !data.phone || !data.serviceType) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Success message (in a real application, this would submit to a server)
+            alert('Thank you for your appointment request! We will contact you within 24 hours to confirm your consultation.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

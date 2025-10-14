@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Create favicon programmatically
+        function createFavicon() {
+            // Background circle
+            ctx.fillStyle = '#F8F8F0';
+            ctx.beginPath();
+            ctx.arc(16, 16, 15, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Border
+            ctx.strokeStyle = '#8B4513';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            
+            // Shield shape
+            ctx.fillStyle = 'rgba(210, 180, 140, 0.4)';
+            ctx.beginPath();
+            ctx.moveTo(16, 5);
+            ctx.lineTo(22, 7);
+            ctx.lineTo(24, 9);
+            ctx.lineTo(24, 18);
+            ctx.quadraticCurveTo(24, 22, 20, 25);
+            ctx.lineTo(16, 27);
+            ctx.lineTo(12, 25);
+            ctx.quadraticCurveTo(8, 22, 8, 18);
+            ctx.lineTo(8, 9);
+            ctx.lineTo(10, 7);
+            ctx.closePath();
+            ctx.fill();
+            ctx.strokeStyle = '#8B4513';
+            ctx.stroke();
+            
+            // Arrow
+            ctx.fillStyle = '#654321';
+            ctx.beginPath();
+            ctx.moveTo(16, 11);
+            ctx.lineTo(19, 15);
+            ctx.lineTo(17.5, 15);
+            ctx.lineTo(17.5, 22);
+            ctx.lineTo(14.5, 22);
+            ctx.lineTo(14.5, 15);
+            ctx.lineTo(13, 15);
+            ctx.closePath();
+            ctx.fill();
+        }
+        
+        createFavicon();
+        
+        // Generate download link
+        canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'favicon-32.png';
+            a.textContent = 'Download Favicon';
+            document.body.appendChild(a);
+        });
+    </script>
+</body>
+</html>

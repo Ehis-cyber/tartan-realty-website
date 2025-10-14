@@ -1,0 +1,22 @@
+{
+    "name": "Tartan Realty & Investments Limited",
+    "short_name": "Tartan Realty",
+    "description": "Professional Real Estate Services - Realty Remodeling & Sales",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "32x32",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "favicon-192.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#8B4513",
+    "background_color": "#F8F8F0",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/"
+}
