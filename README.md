@@ -2,6 +2,8 @@
 
 A modern, interactive real estate website featuring a unique book-style interface with animated elements and form integration.
 
+**Last Updated: October 15, 2025**
+
 ## Features
 
 ✨ **Interactive Design**
