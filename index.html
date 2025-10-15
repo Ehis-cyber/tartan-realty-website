@@ -679,7 +679,7 @@
             // Initialize modern navigation
             initModernNavigation();
 
-            // Moving Arrow that follows mouse movement
+            // Moving Arrow that follows mouse/touch movement
             const movingArrow = document.getElementById('customCursor');
             let mouseX = 0, mouseY = 0;
             let arrowX = 0, arrowY = 0;
@@ -690,44 +690,46 @@
             
             // Show moving arrow on all devices
             movingArrow.style.display = 'block';
+
+            // Universal arrow animation function (works for both desktop and mobile)
+            function animateArrow() {
+                const speed = 0.12; // Slightly slower for smoother follow
+                arrowX += (mouseX - arrowX) * speed;
+                arrowY += (mouseY - arrowY) * speed;
+                
+                movingArrow.style.left = arrowX + 'px';
+                movingArrow.style.top = arrowY + 'px';
+                
+                requestAnimationFrame(animateArrow);
+            }
+            animateArrow(); // Start animation for all devices
+
+            // Calculate arrow direction and rotation
+            function updateArrowDirection(newX, newY) {
+                const deltaX = newX - lastMouseX;
+                const deltaY = newY - lastMouseY;
+                const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+                
+                // Update arrow rotation to point in movement direction
+                if (Math.abs(deltaX) > 2 || Math.abs(deltaY) > 2) {
+                    movingArrow.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+                }
+                
+                lastMouseX = newX;
+                lastMouseY = newY;
+            }
             
             if (!isTouchDevice) {
                 // Desktop-specific features
-
                 // Track mouse movement and calculate direction
                 document.addEventListener('mousemove', (e) => {
                     mouseX = e.clientX;
                     mouseY = e.clientY;
-                    
-                    // Calculate movement direction for arrow rotation
-                    const deltaX = mouseX - lastMouseX;
-                    const deltaY = mouseY - lastMouseY;
-                    const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
-                    
-                    // Update arrow rotation to point in movement direction
-                    if (Math.abs(deltaX) > 2 || Math.abs(deltaY) > 2) {
-                        movingArrow.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-                    }
-                    
-                    lastMouseX = mouseX;
-                    lastMouseY = mouseY;
+                    updateArrowDirection(mouseX, mouseY);
                     
                     // Create occasional sparkle trail
                     createSparkleTrail(mouseX, mouseY);
                 });
-
-                // Smooth arrow follow animation
-                function animateArrow() {
-                    const speed = 0.12; // Slightly slower for smoother follow
-                    arrowX += (mouseX - arrowX) * speed;
-                    arrowY += (mouseY - arrowY) * speed;
-                    
-                    movingArrow.style.left = arrowX + 'px';
-                    movingArrow.style.top = arrowY + 'px';
-                    
-                    requestAnimationFrame(animateArrow);
-                }
-                animateArrow();
 
                 // Create sparkle trail
                 function createSparkleTrail(x, y) {
@@ -785,21 +787,36 @@
                 });
             } else {
                 // Mobile-specific features
-                // Add touch event support for mobile
+                // Track touch movement
                 document.addEventListener('touchmove', (e) => {
+                    e.preventDefault(); // Prevent scrolling while tracking
                     if (e.touches[0]) {
                         mouseX = e.touches[0].clientX;
                         mouseY = e.touches[0].clientY;
+                        updateArrowDirection(mouseX, mouseY);
                     }
-                });
-                
-                document.addEventListener('touchstart', () => {
-                    movingArrow.classList.add('click');
+                }, { passive: false });
+
+                // Track touch start
+                document.addEventListener('touchstart', (e) => {
+                    if (e.touches[0]) {
+                        mouseX = e.touches[0].clientX;
+                        mouseY = e.touches[0].clientY;
+                        movingArrow.classList.add('click');
+                        movingArrow.style.opacity = '1';
+                    }
                 });
                 
                 document.addEventListener('touchend', () => {
                     movingArrow.classList.remove('click');
                 });
+
+                // Show arrow initially on mobile
+                movingArrow.style.opacity = '1';
+                
+                // Set initial position to center of screen on mobile
+                mouseX = window.innerWidth / 2;
+                mouseY = window.innerHeight / 2;
             }
         });
     </script>
