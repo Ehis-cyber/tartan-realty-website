@@ -1,245 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tartan Realty & Investments Limited</title>
-    
-    <!-- Favicon Links -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome — Tartan Realty</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.svg">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#8B4513">
-    <meta name="msapplication-TileColor" content="#8B4513">
-    
-    <!-- Import Outfit Fonts -->
     <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor"></div>
-    
-    <!-- Book Container -->
-    <div class="book-container">
-        <!-- Book Cover -->
-        <div class="book-cover">
-            <div class="cover-content">
-                <div class="logo-large">
-                    <img src="logo-reference-based.svg" alt="Tartan Realty Logo">
-                    <h1>TARTAN REALTY</h1>
-                    <h2>& INVESTMENTS LIMITED</h2>
-                    <p>Realty Remodeling & Sales</p>
-                </div>
-                <button class="open-book-btn" onclick="openBook()">Open Book</button>
-            </div>
-        </div>
+  </head>
+  <body class="welcome-page">
 
-        <!-- Book Pages -->
-        <div class="book" id="book">
-            <!-- Modern Floating Navigation -->
-            <div class="page-tabs" id="navTabs">
-                <div class="nav-toggle" id="navToggle">
-                    <span class="nav-icon">☰</span>
-                    <span class="nav-close">✕</span>
-                </div>
-                <div class="nav-items" id="navItems">
-                    <div class="tab active" data-page="0">
-                        <span class="tab-icon">🏠</span>
-                        <span class="tab-text">HOME</span>
-                    </div>
-                    <div class="tab" data-page="1">
-                        <span class="tab-icon">⭐</span>
-                        <span class="tab-text">WHY US?</span>
-                    </div>
-                    <div class="tab" data-page="2">
-                        <span class="tab-icon">🏢</span>
-                        <span class="tab-text">WHAT WE DO?</span>
-                    </div>
-                    <div class="tab" data-page="3">
-                        <span class="tab-icon">📞</span>
-                        <span class="tab-text">CONTACT</span>
-                    </div>
-                    <div class="tab" data-page="4">
-                        <span class="tab-icon">ℹ️</span>
-                        <span class="tab-text">ABOUT</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Video background (will gracefully fall back to Ken Burns background if no file present) -->
+    <video class="video-bg" id="heroVideo" autoplay muted loop playsinline poster="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg">
+      <source src="Images/hero-loop.webm" type="video/webm">
+      <source src="Images/hero-loop.mp4" type="video/mp4">
+      <!-- If user hasn't provided a video, the poster image and kenburns CSS will be visible -->
+    </video>
 
-            <!-- Book Pages -->
-            <div class="book-pages" id="bookPages">
+    <!-- Ken Burns fallback background (styles.css includes .kenburns-bg) -->
+    <div class="kenburns-bg" aria-hidden="true"></div>
 
-                <!-- PAGE 1: HOME -->
-                <div class="page" data-page="0">
-                    <div class="page-left">
-                        <div class="page-content">
-                            <h1>Your Dream Property Awaits</h1>
-                            <div class="hero-image">
-                                <img src="Images/caroline-badran-AH1qU8YkyaQ-unsplash.jpg" alt="Beautiful property">
-                            </div>
-                            <p class="lead-text">Tartan Realty & Investments Limited - Making your property dreams a reality</p>
-                        </div>
-                    </div>
-                    <div class="page-right">
-                        <div class="page-content">
-                            <h2>Welcome to Tartan Realty</h2>
-                            <div class="intro-cards">
-                                <div class="intro-card">
-                                    <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Professional service">
-                                    <h3>Professional Excellence</h3>
-                                    <p>We know how difficult it is getting the right apartment, house, or office in the right location within budget…but that is why we are in business.</p>
-                                </div>
-                                <div class="intro-card">
-                                    <img src="Images/aleksey-cherenkevich-c9BaR5Qdrmc-unsplash.jpg" alt="Market expertise">
-                                    <h3>Market Expertise</h3>
-                                    <p>The UK property market is increasingly dynamic with increased housing stock and stable interest rates.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="welcome-content">
+      <header class="welcome-header">
+        <img src="logo-reference-based.svg" alt="Tartan Realty logo" class="welcome-logo">
+      </header>
 
-                <!-- PAGE 2: WHY US -->
-                <div class="page" data-page="1">
-                    <div class="page-left">
-                        <div class="page-content">
-                            <h1>Why Choose Tartan Realty?</h1>
-                            <div class="feature-showcase">
-                                <div class="feature-item">
-                                    <div class="feature-icon">🏠</div>
-                                    <h3>Comprehensive Services</h3>
-                                    <p>From students to high-net-worth individuals and organizations, we serve all cross sections of customers.</p>
-                                </div>
-                                <div class="feature-item">
-                                    <div class="feature-icon">💎</div>
-                                    <h3>Bespoken Solutions</h3>
-                                    <p>Our company specializes in providing bespoken remodeling of properties, ensuring each solution is uniquely crafted.</p>
-                                </div>
-                                <div class="feature-item">
-                                    <div class="feature-icon">📈</div>
-                                    <h3>Strategic Investment</h3>
-                                    <p>We provide a professional platform for real estate investment, including market analysis and portfolio diversification.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-right">
-                        <div class="page-content">
-                            <h2>Our Expertise</h2>
-                            <div class="expertise-showcase">
-                                <div class="expertise-card">
-                                    <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Market Knowledge">
-                                    <h3>Deep Market Knowledge</h3>
-                                    <p>The UK property market is increasingly dynamic with increased housing stock and stable interest rates.</p>
-                                </div>
-                                <div class="expertise-card">
-                                    <img src="Images/aleksey-cherenkevich-c9BaR5Qdrmc-unsplash.jpg" alt="Professional Service">
-                                    <h3>Professional Excellence</h3>
-                                    <p>We make your dreams a reality by finding the right property in the right location within budget.</p>
-                                </div>
-                                <div class="expertise-card">
-                                    <img src="Images/annie-spratt-f311tyAZU_4-unsplash.jpg" alt="Transparency">
-                                    <h3>Transparency & Trust</h3>
-                                    <p>We operate with complete transparency and accessibility in all real estate transactions.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <main class="welcome-main">
+        <h1 class="welcome-title">Tartan Realty & Investments</h1>
+        <p class="welcome-subtitle">Bespoken property remodeling & strategic investments</p>
 
-                <!-- PAGE 3: WHAT WE DO -->
-                <div class="page" data-page="2">
-                    <div class="page-left">
-                        <div class="page-content">
-                            <h1>What We Do</h1>
-                            <div class="service-compact">
-                                <div class="service-header">
-                                    <img src="Images/clay-banks-mhDeeOvBs9o-unsplash.jpg" alt="Property Sales" class="service-icon">
-                                    <div class="service-title">
-                                        <h3>Property Sales & Acquisition</h3>
-                                        <p class="service-subtitle">Professional real estate transactions</p>
-                                    </div>
-                                </div>
-                                <div class="service-details">
-                                    <p>We primarily engage in the buying and selling of real estate properties, providing professional guidance throughout the entire process.</p>
-                                    <ul class="service-list">
-                                        <li>Residential property sales</li>
-                                        <li>Commercial property acquisition</li>
-                                        <li>Investment property sourcing</li>
-                                        <li>Market valuation services</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-right">
-                        <div class="page-content">
-                            <h2>Our Services</h2>
-                            <div class="service-compact">
-                                <div class="service-header">
-                                    <img src="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg" alt="Property Remodeling" class="service-icon">
-                                    <div class="service-title">
-                                        <h3>Bespoken Property Remodeling</h3>
-                                        <p class="service-subtitle">Custom property transformations</p>
-                                    </div>
-                                </div>
-                                <div class="service-details">
-                                    <p>We specialize in bespoken remodeling of properties to meet your unique needs and preferences.</p>
-                                    <ul class="service-list">
-                                        <li>Custom home renovations</li>
-                                        <li>Commercial space redesign</li>
-                                        <li>Interior design consultation</li>
-                                        <li>Project management</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="process-section">
-                                <h4>🔄 Our Process:</h4>
-                                <div class="process-steps">
-                                    <span class="step">1. Initial Consultation</span>
-                                    <span class="step">2. Market Analysis</span>
-                                    <span class="step">3. Property Selection</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <a class="enter-btn" href="index-book.html" id="enterBtn">Enter</a>
+      </main>
 
-                <!-- PAGE 4: CONTACT -->
-                <div class="page" data-page="3">
-                    <div class="page-left">
-                        <div class="page-content">
-                            <h1>Book Your Appointment</h1>
-                            <form class="contact-form-compact" id="appointmentForm" action="https://formspree.io/f/xwprbdwe" method="POST">
-                                <div class="form-row-group">
-                                    <div class="form-row">
-                                        <label for="fullName">Full Name *</label>
-                                        <input type="text" id="fullName" name="fullName" required>
-                                    </div>
-                                    <div class="form-row">
-                                        <label for="email">Email Address *</label>
-                                        <input type="email" id="email" name="email" required>
-                                    </div>
-                                </div>
-                                <div class="form-row-group">
-                                    <div class="form-row">
-                                        <label for="phone">Phone Number *</label>
-                                        <input type="tel" id="phone" name="phone" required>
-                                    </div>
-                                    <div class="form-row">
-                                        <label for="serviceType">Service Interest *</label>
-                                        <select id="serviceType" name="serviceType" required>
-                                            <option value="">Select a service...</option>
-                                            <option value="property-sales">Property Sales</option>
-                                            <option value="property-remodeling">Property Remodeling</option>
-                                            <option value="investment-services">Investment Services</option>
-                                            <option value="property-rentals">Property Rentals</option>
-                                        </select>
-                                    </div>
-                                </div>
+      <footer class="welcome-footer">
+        <small>© Tartan Realty & Investments Limited</small>
+      </footer>
+    </div>
+
+    <script>
+      // Small enhancement: pause video on user interaction for mobile data savings
+      (function(){
+        const v = document.getElementById('heroVideo');
+        if(!v) return;
+        // If video sources are missing, hide the element so the CSS kenburns fallback shows
+        if(!v.querySelector('source')){
+          v.style.display = 'none';
+        }
+      })();
+    </script>
+
+  </body>
+</html>
                                 <div class="form-row full-width">
                                     <label for="message">Additional Details</label>
                                     <textarea id="message" name="message" rows="2" placeholder="Tell us about your requirements..."></textarea>
