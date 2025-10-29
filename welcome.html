@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tartan Realty & Investments Limited — Welcome</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="welcome-page">
+    <!-- Video background: place Images/hero-loop.mp4 (MP4) or hero-loop.webm into Images/ to use -->
+    <video class="video-bg" autoplay muted loop playsinline poster="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg">
+      <source src="Images/hero-loop.mp4" type="video/mp4">
+      <source src="Images/hero-loop.webm" type="video/webm">
+      <!-- If no video is available the kenburns background will serve as fallback -->
+    </video>
+    <div class="kenburns-bg" aria-hidden="true"></div>
+    <div class="welcome-overlay" aria-hidden="true"></div>
+
+    <div class="welcome-content">
+      <img src="logo-reference-based.svg" alt="Tartan Realty logo">
+      <h1>Tartan Realty & Investments Limited</h1>
+      <p>Transforming properties across the United Kingdom</p>
+
+      <a class="enter-btn" href="index.html" role="button">Enter</a>
+    </div>
+
+    <!-- keep arrow cursor element available -->
+    <div class="custom-cursor" id="customCursor"></div>
+  </main>
+</body>
+</html>
