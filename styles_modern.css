@@ -156,3 +156,49 @@ section{padding-top:36px;padding-bottom:36px}
   .welcome-page .welcome-content{padding:18px}
 }
 
+/* --- Site-root hero: center branding, logo ring, tuned typography and lower-third Enter CTA --- */
+.modern-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding-top:48px;
+  padding-bottom:48px;
+}
+.modern-hero .hero-inner{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:980px}
+.modern-hero .hero-copy{flex:unset;text-align:center}
+.modern-hero .hero-copy h1{font-size:44px;line-height:1.02;font-weight:900}
+.modern-hero .hero-copy .lead{max-width:640px;font-size:16px}
+
+.hero-logo img{width:110px;height:110px;border-radius:50%;padding:12px;background:#fff;border:6px solid rgba(218,112,214,0.18);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
+.hero-logo{margin-bottom:6px}
+
+/* Purple gradient button tuned to match welcome style */
+.btn-primary{background:linear-gradient(90deg,#e07df0,#7c3aed);box-shadow:0 10px 30px rgba(124,58,237,0.18);padding:12px 26px;border-radius:28px}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(124,58,237,0.22)}
+
+/* Enter CTA placed near the lower third of the viewport */
+.enter-hero{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  top:66vh; /* lower third */
+  z-index:50;
+  background:linear-gradient(90deg,#da70d6,#7c3aed);
+  color:#fff;padding:12px 28px;border-radius:32px;text-decoration:none;font-weight:800;letter-spacing:1px;box-shadow:0 12px 40px rgba(124,58,237,0.18);
+}
+
+@media (max-width:900px){
+  .modern-hero .hero-inner{padding:40px}
+  .modern-hero .hero-copy h1{font-size:32px}
+  .enter-hero{top:60vh}
+}
+
+@media (max-width:520px){
+  .modern-hero .hero-copy h1{font-size:28px}
+  .hero-logo img{width:88px;height:88px;padding:10px}
+  .enter-hero{top:66vh;padding:10px 20px}
+}
+
