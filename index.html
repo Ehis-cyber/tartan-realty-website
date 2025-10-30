@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome — Tartan Realty</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="welcome-page">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Welcome — Tartan Realty</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
+        <link rel="stylesheet" href="styles.css">
+        <!-- Modern overrides for welcome and hero -->
+        <link rel="stylesheet" href="styles_modern.css">
+    </head>
+    <body class="welcome-page">
 
-    <!-- Video background (will gracefully fall back to Ken Burns background if no file present) -->
-    <video class="video-bg" id="heroVideo" autoplay muted loop playsinline poster="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg">
-      <source src="Images/hero-loop.webm" type="video/webm">
-      <source src="Images/hero-loop.mp4" type="video/mp4">
-      <!-- If user hasn't provided a video, the poster image and kenburns CSS will be visible -->
-    </video>
+        <!-- Video background (will gracefully fall back to Ken Burns background if no file present) -->
+        <video class="video-bg" id="heroVideo" autoplay muted loop playsinline poster="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg">
+            <source src="Images/hero-loop.webm" type="video/webm">
+            <source src="Images/hero-loop.mp4" type="video/mp4">
+            <!-- If user hasn't provided a video, the poster image and kenburns CSS will be visible -->
+        </video>
 
-    <!-- Ken Burns fallback background (styles.css includes .kenburns-bg) -->
-    <div class="kenburns-bg" aria-hidden="true"></div>
+        <!-- Ken Burns fallback background (styles.css includes .kenburns-bg) -->
+        <div class="kenburns-bg" aria-hidden="true"></div>
+        <div class="welcome-overlay" aria-hidden="true"></div>
 
-    <div class="welcome-content">
-      <header class="welcome-header">
-        <img src="logo-reference-based.svg" alt="Tartan Realty logo" class="welcome-logo">
-      </header>
+        <div class="welcome-content">
+            <img src="logo-reference-based.svg" alt="Tartan Realty logo" class="welcome-logo">
+            <h1>Tartan Realty & Investments Limited</h1>
+            <p>Transforming properties across the United Kingdom</p>
 
-      <main class="welcome-main">
-        <h1 class="welcome-title">Tartan Realty & Investments</h1>
-        <p class="welcome-subtitle">Bespoken property remodeling & strategic investments</p>
+            <a class="enter-btn" href="index-book.html" id="enterBtn">Enter</a>
+            <footer class="welcome-footer">
+                <small>© Tartan Realty & Investments Limited</small>
+            </footer>
+        </div>
 
-        <a class="enter-btn" href="index-book.html" id="enterBtn">Enter</a>
-      </main>
+        <!-- keep arrow cursor element available -->
+        <div class="custom-cursor" id="customCursor"></div>
 
-      <footer class="welcome-footer">
-        <small>© Tartan Realty & Investments Limited</small>
-      </footer>
-    </div>
+        <script>
+            // Small enhancement: pause video on user interaction for mobile data savings
+            (function(){
+                const v = document.getElementById('heroVideo');
+                if(!v) return;
+                // If video sources are missing, hide the element so the CSS kenburns fallback shows
+                if(!v.querySelector('source')){
+                    v.style.display = 'none';
+                }
+            })();
+        </script>
 
-    <script>
-      // Small enhancement: pause video on user interaction for mobile data savings
-      (function(){
-        const v = document.getElementById('heroVideo');
-        if(!v) return;
-        // If video sources are missing, hide the element so the CSS kenburns fallback shows
-        if(!v.querySelector('source')){
-          v.style.display = 'none';
-        }
-      })();
-    </script>
-
-  </body>
+    </body>
 </html>
                                 <div class="form-row full-width">
                                     <label for="message">Additional Details</label>
