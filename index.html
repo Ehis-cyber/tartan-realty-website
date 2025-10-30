@@ -1,222 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Welcome — Tartan Realty</title>
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
-        <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
-        <link rel="stylesheet" href="styles.css">
-        <!-- Modern overrides for welcome and hero -->
-        <link rel="stylesheet" href="styles_modern.css">
-    </head>
-    <body class="welcome-page">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome — Tartan Realty</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_modern.css">
+  </head>
+  <body class="welcome-page">
 
-        <!-- Video background (will gracefully fall back to Ken Burns background if no file present) -->
-        <video class="video-bg" id="heroVideo" autoplay muted loop playsinline poster="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg">
-            <source src="Images/hero-loop.webm" type="video/webm">
-            <source src="Images/hero-loop.mp4" type="video/mp4">
-            <!-- If user hasn't provided a video, the poster image and kenburns CSS will be visible -->
-        </video>
+    <!-- Video background (will gracefully fall back to Ken Burns background if no file present) -->
+    <video class="video-bg" id="heroVideo" autoplay muted loop playsinline poster="Images/danny-greenberg-jZmlo4FXJUI-unsplash.jpg">
+      <source src="Images/hero-loop.webm" type="video/webm">
+      <source src="Images/hero-loop.mp4" type="video/mp4">
+      <!-- If user hasn't provided a video, the poster image and kenburns CSS will be visible -->
+    </video>
 
-        <!-- Ken Burns fallback background (styles.css includes .kenburns-bg) -->
-        <div class="kenburns-bg" aria-hidden="true"></div>
-        <div class="welcome-overlay" aria-hidden="true"></div>
+    <!-- Ken Burns fallback background (styles.css includes .kenburns-bg) -->
+    <div class="kenburns-bg" aria-hidden="true"></div>
+    <div class="welcome-overlay" aria-hidden="true"></div>
 
-        <div class="welcome-content">
-            <img src="logo-reference-based.svg" alt="Tartan Realty logo" class="welcome-logo">
-            <h1>Tartan Realty & Investments Limited</h1>
-            <p>Transforming properties across the United Kingdom</p>
+    <div class="welcome-content">
+      <img src="logo-reference-based.svg" alt="Tartan Realty logo" class="welcome-logo">
+      <h1>Tartan Realty & Investments Limited</h1>
+      <p>Transforming properties across the United Kingdom</p>
 
-            <a class="enter-btn" href="index-book.html" id="enterBtn">Enter</a>
-            <footer class="welcome-footer">
-                <small>© Tartan Realty & Investments Limited</small>
-            </footer>
-        </div>
-
-        <!-- keep arrow cursor element available -->
-        <div class="custom-cursor" id="customCursor"></div>
-
-        <script>
-            // Small enhancement: pause video on user interaction for mobile data savings
-            (function(){
-                const v = document.getElementById('heroVideo');
-                if(!v) return;
-                // If video sources are missing, hide the element so the CSS kenburns fallback shows
-                if(!v.querySelector('source')){
-                    v.style.display = 'none';
-                }
-            })();
-        </script>
-
-    </body>
-</html>
-                                <div class="form-row full-width">
-                                    <label for="message">Additional Details</label>
-                                    <textarea id="message" name="message" rows="2" placeholder="Tell us about your requirements..."></textarea>
-                                </div>
-                                <!-- Hidden fields for form organization -->
-                                <input type="hidden" name="_subject" value="New Appointment Request - Tartan Realty">
-                                <input type="hidden" name="_next" value="#thank-you">
-                                <button type="submit" class="book-submit-btn">📅 Book Appointment</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="page-right">
-                        <div class="page-content">
-                            <h2>Get in Touch</h2>
-                            <div class="contact-info-grid">
-                                <div class="contact-card">
-                                    <div class="contact-icon">📞</div>
-                                    <div class="contact-text">
-                                        <h4>Phone</h4>
-                                        <p>+44 (0) 20 7XXX XXXX</p>
-                                    </div>
-                                </div>
-                                <div class="contact-card">
-                                    <div class="contact-icon">📧</div>
-                                    <div class="contact-text">
-                                        <h4>Email</h4>
-                                        <p>enquiries@tartanrealtyinvestltd.co.uk
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="contact-card">
-                                    <div class="contact-icon">🕒</div>
-                                    <div class="contact-text">
-                                        <h4>Office Hours</h4>
-                                        <p>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="contact-card">
-                                    <div class="contact-icon">⚡</div>
-                                    <div class="contact-text">
-                                        <h4>Response Time</h4>
-                                        <p>Within 24 hours</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-image-small">
-                                <img src="Images/aleksandra-dementeva-aWBPQHfPwVM-unsplash.jpg" alt="Professional consultation">
-                                <p class="image-caption">Professional consultation available</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PAGE 5: ABOUT -->
-                <div class="page" data-page="4">
-                    <div class="page-left">
-                        <div class="page-content">
-                            <h1>About Tartan Realty</h1>
-                            <div class="about-summary">
-                                <div class="about-intro">
-                                    <img src="Images/caroline-badran-AH1qU8YkyaQ-unsplash.jpg" alt="Tartan Realty" class="about-thumbnail">
-                                    <div class="about-text">
-                                        <p class="lead-text">Tartan Realty & Investments Limited is a company engaged in the provision of bespoken remodeling of properties, renting and sales to all cross sections of customers.</p>
-                                    </div>
-                                </div>
-                                <div class="about-details">
-                                    <p>We primarily engage in the buying and selling of real estate properties and providing a professional and strategic platform for real estate investment.</p>
-                                    <blockquote class="company-quote">
-                                        <p><em>"We know how difficult it is getting the right apartment, house, or office in the right location within budget…but that is why we are in business – to make your dreams a reality."</em></p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-right">
-                        <div class="page-content">
-                            <h2>Our Foundation</h2>
-                            <div class="company-pillars">
-                                <div class="pillar">
-                                    <h3>🎯 Our Mission</h3>
-                                    <p>To make property dreams a reality by providing exceptional, transparent, and accessible real estate services to all cross sections of customers.</p>
-                                </div>
-                                <div class="pillar">
-                                    <h3>🌟 Our Vision</h3>
-                                    <p>To be the leading real estate company in the UK, recognized for our bespoken solutions and market expertise.</p>
-                                </div>
-                                <div class="pillar">
-                                    <h3>💎 Our Values</h3>
-                                    <ul>
-                                        <li>Transparency in all transactions</li>
-                                        <li>Customer-centric approach</li>
-                                        <li>Professional excellence</li>
-                                        <li>Market innovation</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PAGE 6: THANK YOU -->
-                <div class="page" data-page="5" id="thank-you">
-                    <div class="page-left">
-                        <div class="page-content">
-                            <h1>Thank You!</h1>
-                            <div class="thank-you-content">
-                                <div class="success-icon">
-                                    <div class="checkmark">✓</div>
-                                </div>
-                                <div class="thank-you-message">
-                                    <h2>Your appointment request has been sent successfully!</h2>
-                                    <p class="lead-text">We have received your appointment request and will contact you within 24 hours to confirm your booking.</p>
-                                    <div class="next-steps">
-                                        <h3>What happens next?</h3>
-                                        <ul>
-                                            <li>📧 You'll receive an email confirmation shortly</li>
-                                            <li>📞 Our team will call you within 24 hours</li>
-                                            <li>📅 We'll schedule your appointment at your convenience</li>
-                                            <li>🏠 Get ready to find your perfect property!</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-right">
-                        <div class="page-content">
-                            <h2>Contact Information</h2>
-                            <div class="contact-reminder">
-                                <div class="contact-card">
-                                    <div class="contact-icon">📞</div>
-                                    <div class="contact-text">
-                                        <h4>Phone</h4>
-                                        <p>+44 (0) 20 7XXX XXXX</p>
-                                    </div>
-                                </div>
-                                <div class="contact-card">
-                                    <div class="contact-icon">📧</div>
-                                    <div class="contact-text">
-                                        <h4>Email</h4>
-                                        <p>info@tartanrealty.co.uk</p>
-                                    </div>
-                                </div>
-                                <div class="contact-card">
-                                    <div class="contact-icon">⚡</div>
-                                    <div class="contact-text">
-                                        <h4>Response Time</h4>
-                                        <p>Within 24 hours</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="action-buttons">
-                                <button class="go-back-btn" onclick="showPage(3)">📞 Back to Contact</button>
-                                <button class="home-btn" onclick="showPage(0)">🏠 Go to Home</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <a class="enter-btn" href="index-book.html" id="enterBtn">Enter</a>
+      <footer class="welcome-footer">
+        <small>© Tartan Realty & Investments Limited</small>
+      </footer>
     </div>
 
+    <!-- keep arrow cursor element available -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- overlay used for expanding transition animation -->
+    <div id="pageOverlay" class="page-overlay" aria-hidden="true"></div>
+
     <script>
-        let currentPage = 0;
-        const totalPages = 6;
-        let bookOpened = false;
+      (function(){
+        const v = document.getElementById('heroVideo');
+        const btn = document.getElementById('enterBtn');
+        const overlay = document.getElementById('pageOverlay');
+        if(v && !v.querySelector('source')) v.style.display = 'none';
+
+        if(btn && overlay){
+          btn.addEventListener('click', function(e){
+            e.preventDefault();
+            const rect = btn.getBoundingClientRect();
+            const x = rect.left + rect.width/2;
+            const y = rect.top + rect.height/2;
+            overlay.style.left = x + 'px';
+            overlay.style.top = y + 'px';
+            overlay.classList.add('expand');
+            setTimeout(()=>{ window.location.href = btn.getAttribute('href'); }, 700);
+          });
+        }
+      })();
+    </script>
+
+  </body>
+</html>
 
         function openBook() {
             const cover = document.querySelector('.book-cover');

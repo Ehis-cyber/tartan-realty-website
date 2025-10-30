@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tartan Realty & Investments Limited — Welcome</title>
   <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="Fonts/WEB/css/outfit.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_modern.css">
 </head>
 <body>
   <main class="welcome-page">
@@ -23,11 +25,33 @@
       <h1>Tartan Realty & Investments Limited</h1>
       <p>Transforming properties across the United Kingdom</p>
 
-      <a class="enter-btn" href="index.html" role="button">Enter</a>
+      <a class="enter-btn" href="index-book.html" role="button">Enter</a>
     </div>
+
+    <!-- overlay used for expanding transition animation -->
+    <div id="pageOverlay" class="page-overlay" aria-hidden="true"></div>
 
     <!-- keep arrow cursor element available -->
     <div class="custom-cursor" id="customCursor"></div>
   </main>
+  
+  <script>
+    (function(){
+      const btn = document.querySelector('.enter-btn');
+      const overlay = document.getElementById('pageOverlay');
+      if(!btn || !overlay) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const rect = btn.getBoundingClientRect();
+        const x = rect.left + rect.width/2;
+        const y = rect.top + rect.height/2;
+        overlay.style.left = x + 'px';
+        overlay.style.top = y + 'px';
+        overlay.classList.add('expand');
+        // wait for animation then navigate
+        setTimeout(()=>{ window.location.href = btn.getAttribute('href'); }, 700);
+      });
+    })();
+  </script>
 </body>
 </html>
