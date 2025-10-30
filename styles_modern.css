@@ -108,3 +108,51 @@ section{padding-top:36px;padding-bottom:36px}
 }
 
 /* End modern homepage styles */
+
+/* --- Welcome page centering overrides --- */
+.welcome-page .welcome-content{
+  text-align:center !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  max-width:720px;
+  margin:0 auto;
+  padding:28px 20px;
+  z-index:3;
+  color:#fff;
+}
+
+.welcome-page .welcome-content img{
+  width:96px;
+  height:auto;
+  border-radius:50%;
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+
+.welcome-page .welcome-content h1{
+  font-size:34px;
+  line-height:1.05;
+  margin:0;
+  font-weight:800;
+  color:var(--bg, #fff);
+}
+
+.welcome-page .welcome-content p{
+  color:rgba(255,255,255,0.9);
+  max-width:520px;
+}
+
+.welcome-page .enter-btn{
+  margin-top:12px;
+  padding:12px 28px;
+  border-radius:30px;
+}
+
+@media (max-width:520px){
+  .welcome-page .welcome-content h1{font-size:26px}
+  .welcome-page .welcome-content img{width:84px}
+  .welcome-page .welcome-content{padding:18px}
+}
+
