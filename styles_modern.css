@@ -1,0 +1,110 @@
+:root{
+  --accent:#6d28d9; /* purple */
+  --accent-2:#7c3aed;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --dark:#111217;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* --- Overrides to disable legacy book layout in styles.css --- */
+/* Applied when using the modern homepage */
+body.modern-home{
+  display: block !important;
+  justify-content: normal !important;
+  align-items: normal !important;
+  perspective: none !important;
+  min-height: auto !important;
+  background: var(--bg) !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* Hide book-specific containers so they don't overlap the modern layout */
+.book-container, .book, .book-cover, .page-tabs {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Ensure header is sticky and separated from content */
+.site-header{position:relative;z-index:40;background:transparent;padding:18px 0}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Slight global typography improvements */
+body.modern-home, body.modern-home p, body.modern-home h1, body.modern-home h2, body.modern-home h3 {
+  color: #111827;
+  font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Add comfortable vertical rhythm for sections */
+section{padding-top:36px;padding-bottom:36px}
+
+
+.site-header{background:transparent;padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo img{height:44px}
+.main-nav a{margin-left:18px;color:var(--dark);text-decoration:none}
+.main-nav .btn-outline{border:1px solid #e5e7eb;padding:8px 12px;border-radius:8px}
+
+.modern-hero{padding:60px 0;display:flex;align-items:center}
+.hero-inner{display:flex;gap:40px;align-items:center}
+.hero-copy{flex:1}
+.hero-copy h1{font-size:40px;line-height:1.05;margin:0 0 12px}
+.hero-copy .accent{color:var(--accent)}
+.lead{color:var(--muted);max-width:560px}
+.hero-actions{margin-top:18px}
+.btn-primary{background:var(--accent);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;margin-right:12px}
+.btn-ghost{background:transparent;border:1px solid #ddd;padding:10px 18px;border-radius:10px;text-decoration:none;color:var(--dark)}
+.hero-media img{width:420px;border-radius:12px;object-fit:cover}
+
+.why-choose{padding:60px 0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.why-image img{width:100%;border-radius:12px}
+.why-copy h2{font-size:28px;margin-bottom:8px}
+.why-list{margin-top:14px;color:var(--muted);line-height:1.6}
+
+.properties{padding:36px 0}
+.section-head h3{font-size:22px;margin-bottom:6px}
+.muted{color:var(--muted)}
+.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.card{background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(12,12,16,0.06);overflow:hidden}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:12px}
+.price{color:var(--accent);font-weight:700}
+
+.inquiry{padding:48px 0}
+.inquiry-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+.inquiry-form form{display:flex;flex-direction:column;gap:10px}
+.inquiry-form label{font-size:13px;color:var(--muted)}
+.inquiry-form input,.inquiry-form select{padding:10px;border-radius:8px;border:1px solid #e6e6e9}
+.inquiry-image img{width:100%;border-radius:12px}
+
+.blog{padding:48px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.blog-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+.blog-card h4{margin:8px 0 0;font-size:15px}
+
+.become-agent{background:#fdecec;padding:36px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between}
+
+.site-footer.dark{background:#0f1113;color:#cbd5e1;padding:36px 0}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start}
+.footer-logo{height:36px;margin-bottom:10px}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column}
+  .hero-media img{width:100%}
+  .listings-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .inquiry-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .listings-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .hero-copy h1{font-size:26px}
+}
+
+/* End modern homepage styles */
