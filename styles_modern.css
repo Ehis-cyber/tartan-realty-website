@@ -110,6 +110,17 @@ section{padding-top:36px;padding-bottom:36px}
 /* End modern homepage styles */
 
 /* --- Welcome page centering overrides --- */
+.welcome-page{
+  /* Ensure the welcome container fills the viewport and centers its content
+     This targets both <body class="welcome-page"> and <main class="welcome-page"> */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
 .welcome-page .welcome-content{
   text-align:center !important;
   display:flex;
@@ -204,6 +215,20 @@ section{padding-top:36px;padding-bottom:36px}
   background:linear-gradient(90deg,#d86ce6,#7c3aed);
 }
 .page-overlay.expand{transform:translate(-50%,-50%) scale(120);opacity:1}
+
+/* When on the standalone welcome page, hide other site UI that may overlap
+   (header/hero from the main site). This prevents elements from index-book.html
+   or legacy book UI from showing through when the welcome is the current view. */
+.welcome-page .site-header,
+.welcome-page .modern-hero,
+.welcome-page .enter-hero,
+.welcome-page .book-container,
+.welcome-page .book,
+.welcome-page .book-cover,
+.welcome-page .page-tabs {
+  display: none !important;
+  visibility: hidden !important;
+}
 
 /* Tune welcome typography */
 .welcome-page .welcome-content h1{font-size:44px;font-weight:900;margin:6px 0 4px;letter-spacing:-0.5px}
