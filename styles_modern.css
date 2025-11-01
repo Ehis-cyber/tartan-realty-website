@@ -191,12 +191,15 @@ section{padding-top:36px;padding-bottom:36px}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(124,58,237,0.22)}
 
 /* Enter CTA placed near the lower third of the viewport */
-.enter-hero{
-  position:fixed;
+.modern-hero .enter-hero{
+  /* Position the Enter CTA inside the hero (absolute to the hero container)
+     so it doesn't stay fixed over the entire page and overlay other sections. */
+  position:absolute;
   left:50%;
   transform:translateX(-50%);
-  top:66vh; /* lower third */
-  z-index:50;
+  bottom:12%;
+  top:auto;
+  z-index:60;
   background:linear-gradient(90deg,#da70d6,#7c3aed);
   color:#fff;padding:12px 28px;border-radius:32px;text-decoration:none;font-weight:800;letter-spacing:1px;box-shadow:0 12px 40px rgba(124,58,237,0.18);
 }
@@ -245,12 +248,12 @@ section{padding-top:36px;padding-bottom:36px}
 @media (max-width:900px){
   .modern-hero .hero-inner{padding:40px}
   .modern-hero .hero-copy h1{font-size:32px}
-  .enter-hero{top:60vh}
+  .modern-hero .enter-hero{bottom:10%}
 }
 
 @media (max-width:520px){
   .modern-hero .hero-copy h1{font-size:28px}
   .hero-logo img{width:88px;height:88px;padding:10px}
-  .enter-hero{top:66vh;padding:10px 20px}
+  .modern-hero .enter-hero{bottom:8%;padding:10px 20px}
 }
 
