@@ -190,10 +190,14 @@ section{padding-top:36px;padding-bottom:36px}
 .btn-primary{background:linear-gradient(90deg,#e07df0,#7c3aed);box-shadow:0 10px 30px rgba(124,58,237,0.18);padding:12px 26px;border-radius:28px}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(124,58,237,0.22)}
 
-/* Enter CTA placed near the lower third of the viewport */
+/* By default hide any stray .enter-hero elements that are not inside the hero.
+  This prevents cached or legacy pages from showing the CTA in the wrong place. */
+.enter-hero{display:none !important}
+
 .modern-hero .enter-hero{
   /* Position the Enter CTA inside the hero (absolute to the hero container)
-     so it doesn't stay fixed over the entire page and overlay other sections. */
+    so it doesn't stay fixed over the entire page and overlay other sections. */
+  display:inline-block !important;
   position:absolute;
   left:50%;
   transform:translateX(-50%);
