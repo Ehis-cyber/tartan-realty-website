@@ -283,8 +283,21 @@ section{padding-top:36px;padding-bottom:36px}
 }
 
 @media (max-width:520px){
+  /* Mobile: ensure hero headline stays readable and centered, hide decorative logo
+    and give the hero extra top padding so a (potentially) fixed header doesn't
+    overlap the headline. Also stack and space action buttons away from the
+    picture below for better touch targets. */
   .modern-hero .hero-copy h1{font-size:28px}
-  .hero-logo img{width:88px;height:88px;padding:10px}
-  .modern-hero .enter-hero{bottom:8%;padding:10px 20px}
+  /* Hide decorative logo ring on small screens to reduce clutter */
+  .hero-logo{display:none !important}
+  /* If header is fixed by legacy styles, create safe top spacing so content
+    is not hidden beneath it. 84px approximates header height + small gap. */
+  .modern-hero{padding-top:84px; min-height: calc(100vh - 84px);} 
+  /* Increase vertical rhythm inside the hero on small screens */
+  .modern-hero .hero-inner{gap:28px}
+  /* Stack action buttons vertically, center them, and add generous spacing
+    below so they don't sit directly on top of the picture underneath. */
+  .hero-actions{display:flex;flex-direction:column;gap:12px;align-items:center;margin-bottom:18px}
+  .modern-hero .enter-hero{bottom:10%;padding:10px 20px}
 }
 
