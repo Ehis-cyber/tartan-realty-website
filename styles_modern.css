@@ -92,9 +92,32 @@ section{padding-top:36px;padding-bottom:36px}
 .become-agent{background:#fdecec;padding:36px 0}
 .cta-inner{display:flex;align-items:center;justify-content:space-between}
 
-.site-footer.dark{background:#0f1113;color:#cbd5e1;padding:36px 0}
+/* Footer: choose a dark plum/charcoal palette that matches the site's purple accents.
+   Use light text and purple-accent links for good contrast and brand cohesion. */
+.site-footer.dark{
+  background: linear-gradient(180deg,#0b0b10 0%, #0f0712 100%);
+  color: #e6e7eb; /* light gray for body text */
+  padding:36px 0;
+  border-top: 4px solid rgba(124,58,237,0.06); /* subtle purple separator */
+}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start}
-.footer-logo{height:36px;margin-bottom:10px}
+.footer-col{color: #d1d5db}
+.footer-logo{height:44px;margin-bottom:12px}
+
+/* Footer links: remove default blue, use accent color and no bullets */
+.footer-col ul{list-style:none;padding-left:0;margin:0}
+.footer-col ul li{margin:8px 0}
+.footer-col a{color:var(--accent);text-decoration:none;font-weight:600}
+.footer-col a:hover{color:var(--accent-2);text-decoration:underline}
+
+/* Support text and muted items should be readable on dark background */
+.site-footer.dark .muted{color: #a8b0bd}
+
+/* Responsive: stack footer columns on small screens */
+@media (max-width:720px){
+  .footer-grid{grid-template-columns:1fr;gap:16px}
+  .cta-inner{flex-direction:column;gap:12px}
+}
 
 /* Responsive */
 @media (max-width:900px){
