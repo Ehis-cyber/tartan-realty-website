@@ -305,3 +305,18 @@ section{padding-top:36px;padding-bottom:36px}
   .modern-hero .enter-hero{bottom:10%;padding:10px 20px}
 }
 
+/* Mobile/tablet: prevent navbar links from overlapping when the header is narrow.
+   Wrap nav items onto a centered line beneath the logo and make the contact
+   button behave like the other links (no left-margin pushing). This is a
+   minimal responsive fix; if you want a hamburger menu instead I can add
+   that next. */
+@media (max-width:720px){
+  .header-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+  .logo{order:0}
+  .main-nav{order:1;width:100%;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding-top:6px}
+  .main-nav a{display:inline-block;margin:6px 8px;white-space:nowrap;padding:6px 8px}
+  .main-nav .btn-outline{margin-left:0;padding:8px 12px}
+  /* Ensure header sits above content on small screens */
+  .site-header{z-index:120}
+}
+
