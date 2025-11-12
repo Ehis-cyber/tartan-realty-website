@@ -398,6 +398,82 @@ body {
     opacity: 1;
 }
 
+/* ======================================
+   Contact page specific styles (improvements)
+   Targets classes used in `contact.html` and provides
+   a clean responsive layout for mobile and desktop.
+   ====================================== */
+.header{
+    width:100%;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(12,12,16,0.06);
+    position:sticky;
+    top:0;
+    z-index:80;
+}
+.nav-container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:48px;width:auto}
+.logo span{font-weight:800;letter-spacing:1px;color:var(--text-dark)}
+.nav-menu{display:flex;gap:10px;align-items:center}
+.nav-menu li{list-style:none}
+.nav-menu a{color:var(--text-dark);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+.nav-menu a.active, .nav-menu a:hover{background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(224,125,240,0.04));color:var(--dark-purple)}
+
+.page-hero{background:linear-gradient(180deg,#fff,#fbf9ff);padding:40px 0;border-bottom:1px solid rgba(12,12,16,0.03)}
+.hero-content{max-width:980px;margin:0 auto;padding:0 20px;text-align:center}
+.hero-content h1{font-size:32px;color:var(--dark-purple);margin-bottom:8px}
+.hero-content p{color:var(--text-dark);opacity:0.85}
+
+.main-content{max-width:1100px;margin:24px auto;padding:0 20px}
+.content-section h2{font-size:22px;color:var(--dark-purple);margin-bottom:12px}
+
+.contact-container{display:flex;gap:28px;align-items:flex-start}
+.contact-form-section{flex:1;background:#fff;padding:20px;border-radius:12px;box-shadow:0 10px 30px rgba(12,12,16,0.05)}
+.contact-info-section{width:360px}
+.contact-info-card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(12,12,16,0.05)}
+.contact-info-card h3{margin-bottom:12px;color:var(--dark-purple)}
+.contact-item{margin-bottom:12px}
+.contact-item p{color:var(--text-dark);margin-top:6px}
+.contact-image img{width:100%;border-radius:8px;display:block}
+
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{
+    width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(16,16,20,0.06);background:#fff;color:var(--text-dark);font-size:15px
+}
+.form-group textarea{min-height:120px}
+.submit-button{background:linear-gradient(90deg,var(--orchid),var(--amethyst));color:#fff;border:none;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer}
+.submit-button:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(124,58,237,0.12)}
+
+/* smaller screens: stack the contact layout and make nav wrap */
+@media (max-width:900px){
+    .nav-container{padding:10px}
+    .nav-menu{flex-wrap:wrap;justify-content:center;width:100%;margin-top:8px}
+    .logo img{height:40px}
+    .contact-container{flex-direction:column}
+    .contact-info-section{width:100%}
+    .contact-form-section{padding:16px}
+    .hero-content h1{font-size:24px}
+}
+
+/* very small devices: comfortable tap targets */
+@media (max-width:480px){
+    .nav-menu a{padding:10px 12px;font-size:14px}
+    .hero-content{padding:0 12px}
+    .contact-form-section{padding:14px}
+    .submit-button{padding:14px;font-size:16px;width:100%}
+}
+
+
 .tab {
     background: var(--amethyst);
     color: var(--white);
