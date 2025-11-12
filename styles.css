@@ -3001,3 +3001,351 @@ body {
         }
     }
 }
+
+/* --------------------------------------------------------------------- */
+/* Merged styles_modern.css (appended)                                     */
+/* The rules below were previously in `styles_modern.css`. Keeping them    */
+/* here ensures the modern overrides load after legacy rules in this file. */
+/* --------------------------------------------------------------------- */
+/* Modern stylesheet variables and small-scope helper rules */
+:root{
+    --accent:#6d28d9; /* purple */
+    --accent-2:#7c3aed;
+    --muted:#6b7280;
+    --bg:#ffffff;
+    --dark:#111217;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* --- Overrides to disable legacy book layout in styles.css --- */
+/* Applied when using the modern homepage */
+body.modern-home{
+    display: block !important;
+    justify-content: normal !important;
+    align-items: normal !important;
+    perspective: none !important;
+    min-height: auto !important;
+    background: var(--bg) !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+/* Hide book-specific containers so they don't overlap the modern layout */
+.book-container, .book, .book-cover, .page-tabs {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Ensure header is sticky and separated from content */
+.site-header{position:relative;z-index:40;background:transparent;padding:18px 0}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Slight global typography improvements */
+body.modern-home, body.modern-home p, body.modern-home h1, body.modern-home h2, body.modern-home h3 {
+    color: #111827;
+    font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Add comfortable vertical rhythm for sections */
+section{padding-top:36px;padding-bottom:36px}
+
+
+.site-header{background:transparent;padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo img{height:44px}
+.main-nav a{margin-left:18px;color:var(--dark);text-decoration:none}
+.main-nav .btn-outline{border:1px solid #e5e7eb;padding:8px 12px;border-radius:8px}
+
+.modern-hero{padding:60px 0;display:flex;align-items:center}
+/* Split-layout hero: on wide screens use a two-column grid (copy + image card).
+    On narrower screens this falls back to the stacked column rules defined
+    in the responsive section below (max-width:900px). */
+.modern-hero .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;max-width:1100px;width:100%}
+.hero-copy{flex:unset;text-align:left}
+.hero-copy h1{font-size:40px;line-height:1.05;margin:0 0 12px}
+.hero-copy .accent{color:var(--accent)}
+.lead{color:var(--muted);max-width:560px}
+.hero-actions{margin-top:18px}
+.btn-primary{background:var(--accent);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;margin-right:12px}
+.btn-ghost{background:transparent;border:1px solid #ddd;padding:10px 18px;border-radius:10px;text-decoration:none;color:var(--dark)}
+.hero-media{display:flex;align-items:center;justify-content:center}
+.hero-card{width:100%;max-width:420px;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(12,12,16,0.15);transform:translateY(6px);background:#fff}
+.hero-card img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Decorative left-edge gradient on the image card to tie image into brand color */
+.hero-card{position:relative}
+.hero-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:16%;pointer-events:none;background:linear-gradient(90deg,rgba(124,58,237,0.12),rgba(124,58,237,0));mix-blend-mode:normal}
+
+/* Badge overlay on the image card (e.g., Featured / price) */
+.hero-badge{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px;z-index:30}
+.hero-badge .badge-label{background:rgba(255,255,255,0.96);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);font-size:12px;box-shadow:0 6px 16px rgba(12,12,16,0.08)}
+.hero-badge .badge-price{background:#fff;padding:6px 10px;border-radius:8px;font-weight:700;color:#111827;font-size:13px;border:1px solid rgba(12,12,16,0.04)}
+
+/* Slight visual tweak: subtle highlight at the bottom of the card */
+.hero-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(180deg,transparent,rgba(12,12,16,0.03));pointer-events:none}
+
+.why-choose{padding:60px 0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.why-image img{width:100%;border-radius:12px}
+.why-copy h2{font-size:28px;margin-bottom:8px}
+.why-list{margin-top:14px;color:var(--muted);line-height:1.6}
+
+.properties{padding:36px 0}
+.section-head h3{font-size:22px;margin-bottom:6px}
+.muted{color:var(--muted)}
+.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
+.card{background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(12,12,16,0.06);overflow:hidden}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:12px}
+.price{color:var(--accent);font-weight:700}
+
+.inquiry{padding:48px 0}
+.inquiry-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+.inquiry-form form{display:flex;flex-direction:column;gap:10px}
+.inquiry-form label{font-size:13px;color:var(--muted)}
+.inquiry-form input,.inquiry-form select{padding:10px;border-radius:8px;border:1px solid #e6e6e9}
+.inquiry-image img{width:100%;border-radius:12px}
+
+/* Pull the section after the hero up a bit to tighten flow */
+.modern-hero + section { padding-top:18px; }
+
+.blog{padding:48px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.blog-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+.blog-card h4{margin:8px 0 0;font-size:15px}
+
+.become-agent{background:#fdecec;padding:36px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between}
+
+/* Footer: choose a dark plum/charcoal palette that matches the site's purple accents.
+     Use light text and purple-accent links for good contrast and brand cohesion. */
+.site-footer.dark{
+    background: linear-gradient(180deg,#0b0b10 0%, #0f0712 100%);
+    color: #e6e7eb; /* light gray for body text */
+    padding:36px 0;
+    border-top: 4px solid rgba(124,58,237,0.06); /* subtle purple separator */
+}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start}
+.footer-col{color: #d1d5db}
+.footer-logo{height:44px;margin-bottom:12px}
+
+/* Footer links: remove default blue, use accent color and no bullets */
+.footer-col ul{list-style:none;padding-left:0;margin:0}
+.footer-col ul li{margin:8px 0}
+.footer-col a{color:var(--accent);text-decoration:none;font-weight:600}
+.footer-col a:hover{color:var(--accent-2);text-decoration:underline}
+
+/* Support text and muted items should be readable on dark background */
+.site-footer.dark .muted{color: #a8b0bd}
+
+/* Responsive: stack footer columns on small screens */
+@media (max-width:720px){
+    .footer-grid{grid-template-columns:1fr;gap:16px}
+    .cta-inner{flex-direction:column;gap:12px}
+}
+
+/* Responsive */
+@media (max-width:900px){
+    .hero-inner{flex-direction:column}
+    .hero-media img{width:100%}
+    .listings-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr}
+    .inquiry-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+    .listings-grid{grid-template-columns:1fr}
+    .blog-grid{grid-template-columns:1fr}
+    .hero-copy h1{font-size:26px}
+}
+
+/* End modern homepage styles */
+
+/* --- Welcome page centering overrides --- */
+.welcome-page{
+    /* Ensure the welcome container fills the viewport and centers its content
+         This targets both <body class="welcome-page"> and <main class="welcome-page"> */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-page .welcome-content{
+    text-align:center !important;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    max-width:720px;
+    margin:0 auto;
+    padding:28px 20px;
+    z-index:3;
+    color:#fff;
+}
+
+.welcome-page .welcome-content img{
+    width:96px;
+    height:auto;
+    border-radius:50%;
+    box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+
+.welcome-page .welcome-content h1{
+    font-size:34px;
+    line-height:1.05;
+    margin:0;
+    font-weight:800;
+    color:var(--bg, #fff);
+}
+
+.welcome-page .welcome-content p{
+    color:rgba(255,255,255,0.9);
+    max-width:520px;
+}
+
+.welcome-page .enter-btn{
+    margin-top:12px;
+    padding:12px 28px;
+    border-radius:30px;
+}
+
+@media (max-width:520px){
+    .welcome-page .welcome-content h1{font-size:26px}
+    .welcome-page .welcome-content img{width:84px}
+    .welcome-page .welcome-content{padding:18px}
+}
+
+/* --- Site-root hero: center branding, logo ring, tuned typography and lower-third Enter CTA --- */
+.modern-hero{
+    /* Slightly tighter hero to reduce excessive white space while keeping good rhythm */
+    min-height:78vh; /* keep strong above-the-fold presence but not overly tall */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    padding-top:28px; /* reduced */
+    padding-bottom:28px; /* reduced */
+}
+.modern-hero .hero-inner{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:980px}
+.modern-hero .hero-copy{flex:unset;text-align:center}
+.modern-hero .hero-copy h1{font-size:44px;line-height:1.02;font-weight:900}
+.modern-hero .hero-copy .lead{max-width:640px;font-size:16px}
+
+.hero-logo img{width:110px;height:110px;border-radius:50%;padding:12px;background:#fff;border:6px solid rgba(218,112,214,0.18);box-shadow:0 8px 30px rgba(0,0,0,0.25);} 
+.hero-logo{margin-bottom:6px}
+
+/* Purple gradient button tuned to match welcome style */
+.btn-primary{background:linear-gradient(90deg,#e07df0,#7c3aed);box-shadow:0 10px 30px rgba(124,58,237,0.18);padding:12px 26px;border-radius:28px}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(124,58,237,0.22)}
+
+/* By default hide any stray .enter-hero elements that are not inside the hero.
+    This prevents cached or legacy pages from showing the CTA in the wrong place. */
+.enter-hero{display:none !important}
+
+.modern-hero .enter-hero{
+    /* Position the Enter CTA inside the hero (absolute to the hero container)
+        so it doesn't stay fixed over the entire page and overlay other sections. */
+    display:inline-block !important;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:12%;
+    top:auto;
+    z-index:60;
+    background:linear-gradient(90deg,#da70d6,#7c3aed);
+    color:#fff;padding:12px 28px;border-radius:32px;text-decoration:none;font-weight:800;letter-spacing:1px;box-shadow:0 12px 40px rgba(124,58,237,0.18);
+}
+
+/* Page overlay for full-screen transition from Enter button */
+.page-overlay{
+    position:fixed;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    transform:translate(-50%,-50%) scale(0);
+    transition:transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease;
+    z-index:9999;
+    opacity:0;
+    pointer-events:none;
+    background:linear-gradient(90deg,#d86ce6,#7c3aed);
+}
+.page-overlay.expand{transform:translate(-50%,-50%) scale(120);opacity:1}
+
+/* When on the standalone welcome page, hide other site UI that may overlap
+     (header/hero from the main site). This prevents elements from index-book.html
+     or legacy book UI from showing through when the welcome is the current view. */
+.welcome-page .site-header,
+.welcome-page .modern-hero,
+.welcome-page .enter-hero,
+.welcome-page .book-container,
+.welcome-page .book,
+.welcome-page .book-cover,
+.welcome-page .page-tabs {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Tune welcome typography */
+.welcome-page .welcome-content h1{font-size:44px;font-weight:900;margin:6px 0 4px;letter-spacing:-0.5px}
+.welcome-page .welcome-content p{font-size:16px;max-width:560px}
+.welcome-page .enter-btn{background:linear-gradient(90deg,#e07df0 0%, #7c3aed 100%);padding:14px 32px;border-radius:30px;font-weight:800;box-shadow:0 12px 36px rgba(124,58,237,0.18);text-transform:uppercase}
+.welcome-page .welcome-content img{width:98px;height:98px;padding:14px;border-radius:50%;background:#fff;border:8px solid rgba(124,58,237,0.12);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+
+@media (max-width:520px){
+    .welcome-page .welcome-content h1{font-size:28px}
+    .welcome-page .welcome-content p{font-size:14px}
+    .welcome-page .enter-btn{padding:10px 22px}
+}
+
+@media (max-width:900px){
+    .modern-hero .hero-inner{padding:40px}
+    .modern-hero .hero-copy h1{font-size:32px}
+    .modern-hero .enter-hero{bottom:10%}
+}
+
+@media (max-width:520px){
+    /* Mobile: ensure hero headline stays readable and centered, hide decorative
+        logo, and reduce top padding so the hero sits closer beneath the header.
+        Make the header sticky with a subtle background so it never overlays
+        content unexpectedly. Also stack and space action buttons for touch.
+    */
+    .modern-hero .hero-copy h1{font-size:28px}
+    /* Hide decorative logo ring on small screens to reduce clutter */
+    .hero-logo{display:none !important}
+    /* Make header sticky on small screens and give it a translucent background
+        so it reads over the page content without hiding it. */
+    .site-header{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(4px);z-index:60;padding:12px 0}
+    /* Reduce hero top padding so content sits up under the header without a
+        large empty gap; keep a small safe area instead. */
+    .modern-hero{padding-top:18px;min-height:calc(100vh - 64px)}
+    /* Increase vertical rhythm inside the hero on small screens */
+    .modern-hero .hero-inner{gap:20px;padding:14px}
+    /* Stack action buttons vertically, center them, and add spacing below so
+        they don't sit directly on top of the picture underneath. */
+    .hero-actions{display:flex;flex-direction:column;gap:12px;align-items:center;margin-bottom:20px}
+    .modern-hero .enter-hero{bottom:10%;padding:10px 20px}
+    /* Make primary CTA wider and easier to tap on mobile */
+    .hero-actions .btn-primary{width:92%;padding:14px 20px;font-size:18px;border-radius:30px}
+    .hero-actions .btn-ghost{width:72%;padding:12px 16px}
+}
+
+/* Mobile/tablet: prevent navbar links from overlapping when the header is narrow.
+     Wrap nav items onto a centered line beneath the logo and make the contact
+     button behave like the other links (no left-margin pushing). This is a
+     minimal responsive fix; if you want a hamburger menu instead I can add
+     that next. */
+@media (max-width:720px){
+    .header-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+    .logo{order:0}
+    .main-nav{order:1;width:100%;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding-top:6px}
+    .main-nav a{display:inline-block;margin:6px 8px;white-space:nowrap;padding:6px 8px}
+    .main-nav .btn-outline{margin-left:0;padding:8px 12px}
+    /* Ensure header sits above content on small screens */
+    .site-header{z-index:120}
+}
