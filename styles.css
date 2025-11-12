@@ -3097,6 +3097,42 @@ body.modern-home{
 .site-header{position:relative;z-index:40;background:transparent;padding:18px 0}
 .header-inner{max-width:1100px;margin:0 auto;padding:0 20px}
 
+/* Modern navbar visual treatment (2025-style): glass panel, rounded, pill CTAs */
+.site-header .header-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(250,250,250,0.86));
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius:14px;
+    padding:10px 18px;
+    box-shadow: 0 10px 30px rgba(12,12,20,0.08);
+}
+
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:44px}
+.logo span{font-weight:800;color:#111827;letter-spacing:1px}
+
+.main-nav{display:flex;align-items:center;gap:10px}
+.main-nav a{color:var(--dark, #111827);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600;transition:all 180ms ease}
+.main-nav a:hover{color:var(--accent);background:linear-gradient(90deg,rgba(124,58,237,0.06),rgba(218,112,214,0.02));transform:translateY(-1px)}
+
+/* Active link style */
+.main-nav a.active{background:linear-gradient(90deg,#e07df0,#7c3aed);color:#fff;box-shadow:0 8px 30px rgba(124,58,237,0.12)}
+
+/* Webmail as a prominent pill CTA */
+.main-nav .nav-webmail{padding:8px 14px;border-radius:999px;color:#fff;background:linear-gradient(90deg,#e07df0,#7c3aed);box-shadow:0 10px 30px rgba(124,58,237,0.18);font-weight:800;text-decoration:none}
+.main-nav .nav-webmail:hover{opacity:0.97;transform:translateY(-1px)}
+
+/* Outline button variant (Contact) tuned to modern look */
+.main-nav .btn-outline{border:1px solid rgba(16,24,40,0.06);padding:8px 12px;border-radius:12px;background:transparent;color:var(--dark);font-weight:700}
+
+/* Responsive tweaks: keep header compact on small screens */
+@media (max-width:720px){
+    .site-header .header-inner{padding:8px 12px;border-radius:10px}
+    .main-nav a{padding:8px 10px;font-size:14px}
+    .main-nav .nav-webmail{padding:8px 12px;font-size:14px}
+}
+
 /* Slight global typography improvements */
 body.modern-home, body.modern-home p, body.modern-home h1, body.modern-home h2, body.modern-home h3 {
     color: #111827;
