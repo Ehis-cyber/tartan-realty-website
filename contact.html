@@ -9,6 +9,35 @@
         /* Small utility style for the webmail access button on the contact page */
         .webmail-btn{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:8px;background:linear-gradient(90deg,#7c3aed,#e07df0);color:#fff;text-decoration:none;font-weight:700}
         .webmail-btn:hover{opacity:.95}
+
+        /* Responsive header & nav: wrap and center nav items on small screens to avoid overlap */
+        .nav-container{display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .logo img{height:48px}
+        .nav-menu{display:flex;gap:12px;align-items:center;margin:0;padding:0}
+        .nav-menu li{list-style:none}
+
+        /* Contact layout: two-column on desktop, stacked on mobile */
+        .contact-container{display:flex;gap:24px;align-items:flex-start}
+        .contact-form-section{flex:1}
+        .contact-info-section{width:360px}
+        .contact-image img{max-width:100%;border-radius:8px}
+
+        /* Form inputs full-width and comfortable spacing on mobile */
+        .form-group input,.form-group select,.form-group textarea{width:100%;box-sizing:border-box}
+        .submit-button{display:inline-block;padding:12px 20px;border-radius:8px;background:#7c3aed;color:#fff;border:none}
+
+        /* Mobile-specific adjustments */
+        @media (max-width:900px){
+            .contact-container{flex-direction:column}
+            .contact-info-section{width:100%}
+            .logo img{height:40px}
+            .nav-container{flex-wrap:wrap;padding:10px}
+            .nav-menu{width:100%;justify-content:center;flex-wrap:wrap;padding-top:6px}
+            .nav-menu a{padding:8px 10px}
+            .page-hero{padding:28px 12px}
+            .hero-content h1{font-size:28px}
+            .submit-button{width:100%;padding:14px;font-size:16px}
+        }
     </style>
 </head>
 <body>
