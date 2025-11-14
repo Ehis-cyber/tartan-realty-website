@@ -3151,6 +3151,13 @@ body.modern-home{
 .main-nav .nav-webmail{padding:8px 14px;border-radius:999px;color:#fff;background:linear-gradient(90deg,#e07df0,#7c3aed);box-shadow:0 10px 30px rgba(124,58,237,0.18);font-weight:800;text-decoration:none}
 .main-nav .nav-webmail:hover{opacity:0.97;transform:translateY(-1px)}
 
+/* Home link variant that matches the Admin/Webmail pill styling for pages
+   where the navbar only shows a HOME CTA (e.g., contact page). */
+.main-nav .nav-home{
+    padding:8px 14px;border-radius:999px;color:#fff;background:linear-gradient(90deg,#e07df0,#7c3aed);box-shadow:0 10px 30px rgba(124,58,237,0.18);font-weight:800;text-decoration:none;display:inline-block
+}
+.main-nav .nav-home:hover{opacity:0.97;transform:translateY(-1px)}
+
 /* Outline button variant (Contact) tuned to modern look */
 .main-nav .btn-outline{border:1px solid rgba(16,24,40,0.06);padding:8px 12px;border-radius:12px;background:transparent;color:var(--dark);font-weight:700}
 
